@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import heroCharacter from '@/assets/hero-character.jpg';
+import heroCharacter from '@/assets/dusa-morning.png';
 
 const HeroSection = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -47,10 +47,10 @@ const HeroSection = () => {
       <div className="relative z-20 text-center px-4">
         <div className="mb-8 scroll-fade-in">
           <h1 className="fantasy-title text-7xl md:text-9xl font-bold text-primary mb-4">
-            MYTHIC
+            BLACK
           </h1>
           <h2 className="fantasy-title text-4xl md:text-6xl font-semibold text-foreground mb-8">
-            GUILD
+            ORDER
           </h2>
         </div>
         

@@ -1,5 +1,8 @@
 import { useEffect, useRef } from 'react';
-import fallingWarrior from '@/assets/falling-warrior.jpg';
+import fallingWarrior from '@/assets/monkey.jpg';
+import TornCard from './ui/TornCard';
+
+
 
 const LoreSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -33,7 +36,7 @@ const LoreSection = () => {
           <div className="space-y-8">
             <div className="scroll-fade-in">
               <h2 className="fantasy-title text-5xl md:text-6xl font-bold text-primary mb-6">
-                Ancient Chronicles
+                Ancient Order
               </h2>
               <div className="w-24 h-1 bg-gradient-gold mb-8"></div>
             </div>
@@ -41,7 +44,7 @@ const LoreSection = () => {
             <div className="scroll-fade-in space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 In the depths of forgotten realms, where shadows dance with golden light, 
-                the Mythic Guild stands as a beacon of power and wisdom. We are the guardians 
+                the Order stands as a beacon of power and wisdom. We are the guardians 
                 of ancient secrets, wielders of mystical arts.
               </p>
               
@@ -62,33 +65,40 @@ const LoreSection = () => {
               </div>
             </div>
           </div>
+         
+        {/* Right Visual */}
+            <div className="scroll-fade-in relative w-full max-w-2xl mx-auto h-[600px]">
+              <TornCard className="w-full h-full drop-shadow-[0_25px_50px_rgba(192,30,46,0.4)]">
+                <img
+                  src={fallingWarrior}
+                  alt="Falling Warrior"
+                  className="w-full h-full object-cover"
+                />
+              </TornCard>
 
-          {/* Right Visual */}
-          <div className="scroll-fade-in relative">
-            <div className="relative overflow-hidden rounded-lg shadow-ancient">
-              <img 
-                src={fallingWarrior} 
-                alt="Falling Warrior" 
-                className="w-full h-[600px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-              
+
               {/* Floating Elements */}
               <div className="absolute top-10 right-10 w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-              <div className="absolute bottom-32 left-8 w-2 h-2 bg-accent rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-              <div className="absolute top-1/2 right-16 w-1 h-1 bg-primary rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-            </div>
+              <div
+                className="absolute bottom-32 left-8 w-2 h-2 bg-accent rounded-full animate-pulse"
+                style={{ animationDelay: '1s' }}
+              ></div>
+              <div
+                className="absolute top-1/2 right-16 w-1 h-1 bg-primary rounded-full animate-pulse"
+                style={{ animationDelay: '2s' }}
+              ></div>
 
-            {/* Quote Overlay */}
-            <div className="absolute -bottom-8 -left-8 bg-card/90 backdrop-blur-sm p-6 rounded-lg border border-border max-w-xs">
-              <p className="text-sm text-muted-foreground italic">
-                "In falling, we learn to rise. In darkness, we forge our light."
-              </p>
-              <div className="text-xs text-primary mt-2 font-semibold">
-                — Guild Master Erebus
+              {/* Quote Overlay */}
+              <div className="absolute -bottom-8 -left-8 bg-card/90 backdrop-blur-sm p-6 rounded-lg border border-border max-w-xs">
+                <p className="text-sm text-muted-foreground italic">
+                  "In falling, we learn to rise. In darkness, we forge our light."
+                </p>
+                <div className="text-xs text-primary mt-2 font-semibold">
+                  — Guild Masters Reinzo & SushiRawks
+                </div>
               </div>
             </div>
-          </div>
+
         </div>
       </div>
     </section>

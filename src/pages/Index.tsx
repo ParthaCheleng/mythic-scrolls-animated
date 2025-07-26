@@ -25,13 +25,17 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <HeroSection />
-      <LoreSection />
-      <CharacterSection />
-      <RecruitmentSection />
-    </div>
-  );
+  <div className="relative overflow-visible">
+    <HeroSection />
+    <div className="section-shadow-divider" />
+
+    <LoreSection />
+    <CharacterSection />
+
+    <RecruitmentSection />
+  </div>
+);
+
 };
 
 export default Index;

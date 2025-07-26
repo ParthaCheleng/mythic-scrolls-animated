@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import guildEmblem from '@/assets/guild-emblem.jpg';
+import guildEmblem from '@/assets/BO-logo.png';
 
 const characters = [
   {
