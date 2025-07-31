@@ -4,22 +4,22 @@ import guildEmblem from '@/assets/BO-logo.png';
 
 const characters = [
   {
-    name: "Erebus the Shadowbane",
+    name: "SushiRawks",
     role: "Guild Master",
     description: "Ancient keeper of forbidden knowledge and master of shadow magic.",
-    power: "Shadow Mastery"
+    power: "Shai"
   },
   {
-    name: "Lyra Goldenheart",
-    role: "War Strategist", 
+    name: "RaiserX",
+    role: "Secretary",
     description: "Brilliant tactician whose strategies have won countless battles.",
-    power: "Battle Foresight"
+    power: "Wizard"
   },
   {
-    name: "Thane Ironforge",
-    role: "Guardian",
+    name: "Reinzo",
+    role: "Guild Master",
     description: "Stalwart defender whose shield has never been broken.",
-    power: "Unbreakable Will"
+    power: "Kunoichi"
   }
 ];
 
@@ -46,36 +46,34 @@ const CharacterSection = () => {
 
   return (
     <section ref={sectionRef} className="relative py-32 overflow-hidden">
-      {/* Diagonal Background */}
       <div className="diagonal-section-reverse absolute inset-0 bg-muted/20 z-0" />
-      
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 scroll-fade-in">
-          <h2 className="fantasy-title text-5xl md:text-6xl font-bold text-primary mb-6">
-            Legendary Champions
+          <h2 className="fantasy-title text-5xl md:text-5xl font-blackorder text-primary mb-6">
+            Inquisitors
           </h2>
           <div className="w-24 h-1 bg-gradient-gold mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Meet the heroes who have shaped our destiny and continue to lead us into battle.
+            Meet the heralds who shapes our guild and lead us into battle.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {characters.map((character, index) => (
-            <div 
+            <div
               key={character.name}
-              className="scroll-fade-in group"
+              className="scroll-fade-in group transform transition-transform duration-500 hover:scale-[1.03]"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 group-hover:shadow-mystical">
+              <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 group-hover:shadow-mystical shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
                     <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-gold p-1">
                       <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
-                        <img 
-                          src={guildEmblem} 
+                        <img
+                          src={guildEmblem}
                           alt={character.name}
-                          className="w-12 h-12 object-cover rounded-full"
+                          className="w-12 h-12 object-cover rounded-full group-hover:drop-shadow-[0_0_10px_hsl(var(--primary))] transition-all duration-300"
                         />
                       </div>
                     </div>
@@ -86,14 +84,14 @@ const CharacterSection = () => {
                       {character.role}
                     </div>
                   </div>
-                  
+
                   <p className="text-muted-foreground text-center mb-6 leading-relaxed">
                     {character.description}
                   </p>
-                  
+
                   <div className="text-center">
                     <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
-                      <span className="text-primary font-semibold text-sm">
+                      <span className="text-primary font-semibold text-sm rounded-full group-hover:drop-shadow-[0_0_10px_hsl(var(--primary))] transition-all duration-300">
                         {character.power}
                       </span>
                     </div>
@@ -105,21 +103,21 @@ const CharacterSection = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center scroll-fade-in">
-          <div className="bg-card/30 backdrop-blur-sm p-12 rounded-2xl border border-border/50 max-w-4xl mx-auto">
-            <h3 className="fantasy-title text-4xl font-bold text-primary mb-6">
+        <div className="text-center scroll-fade-in transform transition-transform duration-500 hover:scale-[1.03]">
+          <div className="bg-card/30 backdrop-blur-sm p-12 rounded-2xl border border-border/50 max-w-4xl mx-auto hover:border-primary/50 hover:shadow-mystical transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.7)]">
+            <h3 className="fantasy-title text-4xl font-blackorder text-primary mb-6">
               Forge Your Legend
             </h3>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              The guild seeks worthy champions to join our ranks. Do you have what it takes 
-              to stand among legends and shape the fate of realms?
+              The guild seeks worthy players to join our ranks. Do you have what it takes
+              to stand amongst your allies and face your enemies?
             </p>
             <div className="space-y-4">
               <div className="text-accent font-semibold">
                 Current Recruitment: OPEN
               </div>
               <div className="text-sm text-muted-foreground">
-                Accepting applications for Warriors, Mages, and Strategists
+                Accepting applications via discord only.
               </div>
             </div>
           </div>

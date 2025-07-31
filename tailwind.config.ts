@@ -68,7 +68,8 @@ export default {
 			},
 			fontFamily: {
 				'fantasy': ['Cinzel', 'serif'],
-				'gothic': ['Philosopher', 'sans-serif']
+				'gothic': ['Philosopher', 'sans-serif'],
+				'blackorder' : ['NexaRustBlack2', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

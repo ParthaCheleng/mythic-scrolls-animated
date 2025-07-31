@@ -3,6 +3,8 @@ import HeroSection from '@/components/HeroSection';
 import LoreSection from '@/components/LoreSection';
 import CharacterSection from '@/components/CharacterSection';
 import RecruitmentSection from '@/components/RecruitmentSection';
+import BlackOrderAlliance from '@/components/BlackOrderAlliance';
+import PhotoGallery from '@/components/PhotoGallery';
 
 const Index = () => {
   useEffect(() => {
@@ -25,17 +27,15 @@ const Index = () => {
   }, []);
 
   return (
-  <div className="relative overflow-visible">
-    <HeroSection />
-    <div className="section-shadow-divider" />
-
-    <LoreSection />
-    <CharacterSection />
-
-    <RecruitmentSection />
-  </div>
-);
-
+    <div className="min-h-screen">
+      <HeroSection />
+      <LoreSection />
+      <CharacterSection />
+      <PhotoGallery />
+      <BlackOrderAlliance />
+      <RecruitmentSection />
+    </div>
+  );
 };
 
 export default Index;
