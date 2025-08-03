@@ -5,6 +5,10 @@ import CharacterSection from '@/components/CharacterSection';
 import RecruitmentSection from '@/components/RecruitmentSection';
 import BlackOrderAlliance from '@/components/BlackOrderAlliance';
 import PhotoGallery from '@/components/PhotoGallery';
+import LuxuryHeader, { NameCard } from '@/components/LuxuryHeader';
+
+
+
 
 const Index = () => {
   useEffect(() => {
@@ -34,6 +38,7 @@ const Index = () => {
       <PhotoGallery />
       <BlackOrderAlliance />
       <RecruitmentSection />
+      <LuxuryHeader />
     </div>
   );
 };

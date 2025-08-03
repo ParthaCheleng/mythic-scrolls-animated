@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import guildEmblem from '@/assets/BO-logo.png';
+import guildEmblem from '@/assets/BO-logo.webp';
 
 const characters = [
   {
@@ -28,10 +28,11 @@ const CharacterSection = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
+      (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add('animate-fadeInUp');
+            observer.unobserve(entry.target);
           }
         });
       },
@@ -48,7 +49,10 @@ const CharacterSection = () => {
     <section ref={sectionRef} className="relative py-32 overflow-hidden">
       <div className="diagonal-section-reverse absolute inset-0 bg-muted/20 z-0" />
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 scroll-fade-in">
+        <div
+          className="text-center mb-16 scroll-fade-in opacity-0"
+          style={{ willChange: 'transform, opacity' }}
+        >
           <h2 className="fantasy-title text-5xl md:text-5xl font-blackorder text-primary mb-6">
             Inquisitors
           </h2>
@@ -62,8 +66,12 @@ const CharacterSection = () => {
           {characters.map((character, index) => (
             <div
               key={character.name}
-              className="scroll-fade-in group transform transition-transform duration-500 hover:scale-[1.03]"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className="scroll-fade-in opacity-0 group transform transition-transform duration-500 hover:scale-[1.03]"
+              style={{
+                animationDelay: `${index * 0.15}s`,
+                animationFillMode: 'forwards',
+                willChange: 'transform, opacity'
+              }}
             >
               <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 group-hover:shadow-mystical shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                 <CardContent className="p-8">
@@ -71,6 +79,7 @@ const CharacterSection = () => {
                     <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-gold p-1">
                       <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
                         <img
+                          loading="lazy"
                           src={guildEmblem}
                           alt={character.name}
                           className="w-12 h-12 object-cover rounded-full group-hover:drop-shadow-[0_0_10px_hsl(var(--primary))] transition-all duration-300"
@@ -103,7 +112,10 @@ const CharacterSection = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center scroll-fade-in transform transition-transform duration-500 hover:scale-[1.03]">
+        <div
+          className="text-center scroll-fade-in opacity-0 transform transition-transform duration-500 hover:scale-[1.03]"
+          style={{ willChange: 'transform, opacity' }}
+        >
           <div className="bg-card/30 backdrop-blur-sm p-12 rounded-2xl border border-border/50 max-w-4xl mx-auto hover:border-primary/50 hover:shadow-mystical transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.7)]">
             <h3 className="fantasy-title text-4xl font-blackorder text-primary mb-6">
               Forge Your Legend
@@ -123,6 +135,23 @@ const CharacterSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Keyframe Animation */}
+      <style>{`
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeInUp {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 };

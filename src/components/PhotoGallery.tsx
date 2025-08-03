@@ -1,29 +1,29 @@
 import { useState, useEffect } from "react";
-import ss1 from "@/assets/pictures/ss_1.png";
-import ss2 from "@/assets/pictures/ss_2.png";
-import ss3 from "@/assets/pictures/ss_3.png";
-import ss4 from "@/assets/pictures/ss_4.png";
-import ss5 from "@/assets/pictures/ss_5.png";
-import ss6 from "@/assets/pictures/ss_6.png";
-import ss7 from "@/assets/pictures/ss_7.png";
-import ss8 from "@/assets/pictures/ss_8.png";
-import ss9 from "@/assets/pictures/ss_9.png";
-import ss10 from "@/assets/pictures/ss_10.png";
-import ss11 from "@/assets/pictures/ss_11.png";
-import ss12 from "@/assets/pictures/ss_12.png";
-import ss13 from "@/assets/pictures/ss_13.png";
-import ss14 from "@/assets/pictures/ss_14.png";
-import ss15 from "@/assets/pictures/ss_15.png";
-import ss16 from "@/assets/pictures/ss_16.png";
-import ss17 from "@/assets/pictures/ss_17.png";
-import ss18 from "@/assets/pictures/ss_18.png";
-import ss19 from "@/assets/pictures/ss_19.png";
-import ss20 from "@/assets/pictures/ss_20.png";
-import ss21 from "@/assets/pictures/ss_21.png";
-import ss22 from "@/assets/pictures/ss_22.png";
-import ss23 from "@/assets/pictures/ss_23.png";
-import ss24 from "@/assets/pictures/ss_24.png";
-import ss25 from "@/assets/pictures/ss_25.png";
+import ss1 from "@/assets/pictures/ss_1.webp";
+import ss2 from "@/assets/pictures/ss_2.webp";
+import ss3 from "@/assets/pictures/ss_3.webp";
+import ss4 from "@/assets/pictures/ss_4.webp";
+import ss5 from "@/assets/pictures/ss_5.webp";
+import ss6 from "@/assets/pictures/ss_6.webp";
+import ss7 from "@/assets/pictures/ss_7.webp";
+import ss8 from "@/assets/pictures/ss_8.webp";
+import ss9 from "@/assets/pictures/ss_9.webp";
+import ss10 from "@/assets/pictures/ss_10.webp";
+import ss11 from "@/assets/pictures/ss_11.webp";
+import ss12 from "@/assets/pictures/ss_12.webp";
+import ss13 from "@/assets/pictures/ss_13.webp";
+import ss14 from "@/assets/pictures/ss_14.webp";
+import ss15 from "@/assets/pictures/ss_15.webp";
+import ss16 from "@/assets/pictures/ss_16.webp";
+import ss17 from "@/assets/pictures/ss_17.webp";
+import ss18 from "@/assets/pictures/ss_18.webp";
+import ss19 from "@/assets/pictures/ss_19.webp";
+import ss20 from "@/assets/pictures/ss_20.webp";
+import ss21 from "@/assets/pictures/ss_21.webp";
+import ss22 from "@/assets/pictures/ss_22.webp";
+import ss23 from "@/assets/pictures/ss_23.webp";
+import ss24 from "@/assets/pictures/ss_24.webp";
+import ss25 from "@/assets/pictures/ss_25.webp";
 
 interface DiamondItem {
   id: string;
@@ -92,12 +92,13 @@ const DiamondCard = ({
         hover:shadow-[0_0_30px_rgba(255,0,0,0.6)] cursor-pointer`}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-        <img
-          src={item.image}
-          alt=""
-          className="w-full h-full object-cover transform -rotate-45 scale-150 group-hover:scale-160 transition-transform duration-700 ease-in-out"
-          onLoad={() => setIsLoaded(true)}
-        />
+          <img
+            loading="lazy"
+            src={item.image}
+            alt=""
+            className="w-full h-full object-cover transform -rotate-45 scale-150 group-hover:scale-160 transition-transform duration-700 ease-in-out"
+            onLoad={() => setIsLoaded(true)}
+          />
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
       </div>
     </div>

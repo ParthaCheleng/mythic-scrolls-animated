@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import fallingWarrior from '@/assets/monk.jpg';
-import guildEmblem from '@/assets/BO-logo.png';
+import fallingWarrior from '@/assets/monk.webp';
+import guildEmblem from '@/assets/BO-logo.webp';
 
 const LoreSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -57,6 +57,7 @@ const LoreSection = () => {
                     The Fallen Prophecy
                   </h3>
                   <img
+                    loading="lazy"
                     src={guildEmblem}
                     alt="Guild Logo"
                     className="w-8 h-8 object-contain transition-all duration-300 group-hover:drop-shadow-[0_0_10px_#ff0022]"
@@ -76,6 +77,7 @@ const LoreSection = () => {
           <div className="scroll-fade-in relative w-full max-w-2xl mx-auto ">
             <div className="relative z-10">
               <img
+                loading="lazy"
                 src={fallingWarrior}
                 alt="Falling Warrior"
                 className="w-full h-auto object-contain rounded-none drop-shadow-[0_0_60px_rgba(255,0,0,0.4)]"
