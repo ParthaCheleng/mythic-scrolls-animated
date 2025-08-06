@@ -33,28 +33,28 @@ const LoreSection = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="scroll-fade-in">
-              <h2 className="fantasy-title text-5xl md:text-5xl font-blackorder text-primary mb-6">
-                Ancient Order
+              <h2 className="fantasy-title text-5xl md:text-4xl font-blackorder text-primary mb-6">
+                Welcome to BlackOrder
               </h2>
               <div className="w-24 h-1 bg-gradient-gold mb-8"></div>
             </div>
 
             <div className="scroll-fade-in space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                In the depths of forgotten realms, where shadows dance with golden light, 
-                the Order stands as a beacon of power and wisdom. We are the guardians 
-                of ancient secrets, wielders of mystical arts.
+                A brotherhood forged in battle and bound by honor. We are a siege-focused guild, sworn to the art of war and devoted to claiming victory through strength, strategy, and unity. 
+                We strive for excellence and glory with every clash of steel. Yet, we remain a welcoming order —to new blood eager to learn. Whether you are a battle-hardened 
+                veteran or a fresh blade seeking purpose, BlackOrder calls you to stand with us.
               </p>
               
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              {/* <p className="text-lg text-muted-foreground leading-relaxed">
                 Our order was forged in the crucible of eternal conflict, where heroes rise 
                 from the ashes of defeat and legends are born in moments of greatest peril.
-              </p>
+              </p> */}
 
              <div className="group bg-card/50 p-6 rounded-lg border border-border/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-mystical transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(0,0,0,0.5)] ">
                 <div className="flex items-center gap-3 mb-4">
                   <h3 className="fantasy-title text-2xl font-blackorder text-accent">
-                    The Fallen Prophecy
+                    Forge Your Legend
                   </h3>
                   <img
                     loading="lazy"
@@ -64,8 +64,8 @@ const LoreSection = () => {
                   />
                 </div>
                 <p className="text-muted-foreground italic">
-                  "When darkness swallows the last ray of hope, the chosen shall rise from
-                  shadow's embrace, bearing golden flame to illuminate the path of destiny."
+                  "The guild seeks worthy players to join our ranks. Do you have what it takes
+                   to stand amongst your allies and face your enemies?"
                 </p>
               </div>
 
@@ -101,7 +101,7 @@ const LoreSection = () => {
             {/* Quote box */}
             <div className="absolute -bottom-8 -left-8 bg-card/90 backdrop-blur-sm p-6 rounded-lg border border-border max-w-xs z-20 hover:border-primary/50 hover:shadow-mystical transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(0,0,0,0.7)]">
               <p className="text-sm text-muted-foreground italic">
-                "In falling, we learn to rise. In darkness, we forge our light."
+                "Power is Earned. Brotherhood is Chosen."
               </p>
               <div className="text-xs text-primary mt-2 font-semibold">
                 — Guild Masters Reinzo & SushiRawks

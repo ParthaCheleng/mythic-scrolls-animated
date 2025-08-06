@@ -4,22 +4,16 @@ import guildEmblem from '@/assets/BO-logo.webp';
 
 const characters = [
   {
-    name: "SushiRawks",
+    name: "Reinzo",
     role: "Guild Master",
-    description: "Ancient keeper of forbidden knowledge and master of shadow magic.",
-    power: "Shai"
+    description: "The Ruthless Executioners.",
+    power: "Kunoichi"
   },
   {
     name: "RaiserX",
     role: "Secretary",
-    description: "Brilliant tactician whose strategies have won countless battles.",
+    description: "The Iron Wall.",
     power: "Wizard"
-  },
-  {
-    name: "Reinzo",
-    role: "Guild Master",
-    description: "Stalwart defender whose shield has never been broken.",
-    power: "Kunoichi"
   }
 ];
 
@@ -49,6 +43,7 @@ const CharacterSection = () => {
     <section ref={sectionRef} className="relative py-32 overflow-hidden">
       <div className="diagonal-section-reverse absolute inset-0 bg-muted/20 z-0" />
       <div className="container mx-auto px-4 relative z-10">
+        {/* Heading */}
         <div
           className="text-center mb-16 scroll-fade-in opacity-0"
           style={{ willChange: 'transform, opacity' }}
@@ -57,12 +52,13 @@ const CharacterSection = () => {
             Inquisitors
           </h2>
           <div className="w-24 h-1 bg-gradient-gold mx-auto mb-8"></div>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Meet the heralds who shapes our guild and lead us into battle.
+          <p className="text-base text-muted-foreground fantasy-title font-blackorder max-w-3xl mx-auto leading-relaxed">
+            Founders gave it form. War gave it purpose. BlackOrder endures and prevails.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        {/* Cards Row */}
+        <div className="flex flex-wrap justify-center gap-8 mb-16">
           {characters.map((character, index) => (
             <div
               key={character.name}
@@ -73,10 +69,10 @@ const CharacterSection = () => {
                 willChange: 'transform, opacity'
               }}
             >
-              <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 group-hover:shadow-mystical shadow-[0_0_30px_rgba(0,0,0,0.7)]">
+              <Card className="w-[320px] sm:w-[360px] h-[380px] bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-500 group-hover:shadow-mystical shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-gold p-1">
+                    <div className="w-20 h-20 mx-auto mb-12 rounded-full bg-gradient-gold p-1">
                       <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
                         <img
                           loading="lazy"
@@ -118,20 +114,19 @@ const CharacterSection = () => {
         >
           <div className="bg-card/30 backdrop-blur-sm p-12 rounded-2xl border border-border/50 max-w-4xl mx-auto hover:border-primary/50 hover:shadow-mystical transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.7)]">
             <h3 className="fantasy-title text-4xl font-blackorder text-primary mb-6">
-              Forge Your Legend
+              Commanders of the War
             </h3>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              The guild seeks worthy players to join our ranks. Do you have what it takes
-              to stand amongst your allies and face your enemies?
+              Chosen from among the most disciplined and brutal of our ranks, the Inquisitors are not merely leaders—they are enforcers of the order.
             </p>
-            <div className="space-y-4">
+            {/* <div className="space-y-4">
               <div className="text-accent font-semibold">
                 Current Recruitment: OPEN
               </div>
               <div className="text-sm text-muted-foreground">
                 Accepting applications via discord only.
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

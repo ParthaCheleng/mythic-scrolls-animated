@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import scrollBg from '@/assets/scroll-text.png';
+import scrollBg from '@/assets/scroll-bg-sig.png';
 import waxSeal from '@/assets/red-seal.png';
 import quill from '@/assets/Quill.png';
 import shai from '@/assets/shai.png';
@@ -97,7 +97,7 @@ const RecruitmentSection = () => {
                   <ul className="text-sm text-muted-foreground space-y-1">
                     <li>• Weekly GBR</li>
                     <li>• Gear guidance</li>
-                    <li>• Node war every week</li>
+                    <li>• Node war every day</li>
                     <li>• Siege every week</li>
                   </ul>
                 </div>
@@ -182,31 +182,18 @@ const RecruitmentSection = () => {
                   <img
                     src={waxSeal}
                     alt="Wax Seal"
-                    className="absolute top-[135px] left-1/2 -translate-x-1/2 w-[110px] z-20 transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_15px_rgba(255,0,0,0.6)]"
+                    className="absolute top-[350px] left-[49%] -translate-x-1/2 w-[110px] z-20 transition-all duration-500 group-hover:scale-125 group-hover:drop-shadow-[0_0_15px_rgba(255,0,0,0.9)]"
                     style={{
                       filter:
-                        'brightness(1.6) contrast(1.5) sepia(0.6) saturate(1.6) drop-shadow(0 2px 6px rgba(0, 0, 0, 1))',
+                        'brightness(2) contrast(1) sepia(0.2) saturate(1.5) drop-shadow(0 2px 6px rgba(0, 0, 0, 3))',
                       mixBlendMode: 'multiply',
                       opacity: 0.95,
                     }}
                   />
 
+
                 </a>
 
-               
-
-                
-                {/* Quill */}
-                <img
-                  src={quill}
-                  alt="Quill Pen"
-                  className="absolute bottom-[48px] right-[-90px] w-[440px] rotate-[20deg] z-20"
-                  style={{
-                    filter: 'brightness(1) contrast(1.1) grayscale(0.5) sepia(0.5) drop-shadow(0 2px 8px rgba(255, 0, 64, 0.4))',
-                    mixBlendMode: 'multiply',
-                    opacity: 0.92,
-                  }}
-                />
               </div>
             </div>
 

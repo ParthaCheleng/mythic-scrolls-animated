@@ -1,4 +1,5 @@
-import roseBackground from "@/assets/rose-corner.png"; // This is your full image
+import roseBackground from "@/assets/rose-adjusted.png";
+import pillarImage from "@/assets/pillar.png";
 import guildEmblem from "@/assets/BO-logo.webp";
 import { cn } from "@/lib/utils";
 import { members } from "@/components/data/members";
@@ -34,23 +35,53 @@ const NameCard = ({ name, className }: NameCardProps) => {
 const LuxuryHeader = () => {
   return (
     <div className="relative overflow-hidden isolate bg-background">
+
       {/* Top and Bottom Shadows */}
-      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/40 to-transparent z-40" />
-      {/* Decorative Rose Background Layer */}
+      <div className="pointer-events-none absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/30 to-transparent z-10" />
+      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/40 to-transparent z-30" />
+
+      {/* Rose Backgrounds */}
       <div
-        className="absolute inset-0 z-0 bg-no-repeat bg-cover pointer-events-none"
+        className="absolute inset-0 z-10 bg-no-repeat bg-cover opacity-10 mix-blend-screen pointer-events-none"
         style={{
           backgroundImage: `url(${roseBackground})`,
           backgroundPosition: "top right",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "contain",
+          backgroundSize: "cover",
+          animation: "slowRose 8s ease-in-out infinite",
         }}
-
+      />
+      <div
+        className="absolute inset-0 z-10 bg-no-repeat bg-cover opacity-10 mix-blend-screen pointer-events-none"
+        style={{
+          backgroundImage: `url(${roseBackground})`,
+          backgroundPosition: "bottom left",
+          backgroundSize: "cover",
+          animation: "slowRose 9s ease-in-out infinite reverse",
+        }}
       />
 
-      {/* Shadow Overlay */}
-      <div className="pointer-events-none absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/30 to-transparent z-10" />
-      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/40 to-transparent z-10" />
+      {/* Left Pillar with hover animation */}
+        <div className="absolute z-30 top-16 left-[-50px] h-[110vh] w-[500px] pointer-events-none group">
+          <img
+            src={pillarImage}
+            alt="Left Pillar"
+            className="h-full w-full object-contain opacity-90 drop-shadow-[40px_0px_15px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-105 group-hover:drop-shadow-[60px_0px_20px_rgba(255,0,0,0.3)]"
+          />
+        </div>
+
+       {/* Right Pillar with shadow on left side */}
+        <div className="absolute z-30 top-16 right-[-50px] h-[110vh] w-[500px] pointer-events-none group transform scale-x-[-1]">
+          <img
+            src={pillarImage}
+            alt="Right Pillar"
+            className="h-full w-full object-contain opacity-90 drop-shadow-[60px_0px_15px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-105 group-hover:drop-shadow-[60px_0px_20px_rgba(255,0,0,0.3)]"
+          />
+        </div>
+
+
+
+
+
 
       {/* Main Section */}
       <section className="relative z-20 w-full min-h-screen bg-gradient-shadow text-white px-4 py-12">
@@ -59,7 +90,7 @@ const LuxuryHeader = () => {
             Founding members of BLACKORDER
           </h1>
           <div className="w-24 h-1 bg-gradient-gold mx-auto mb-8 mt-3"></div>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground fantasy-title font-blackorder max-w-3xl mx-auto leading-relaxed">
             Meet the honored members of BLACKORDER
           </p>
         </div>

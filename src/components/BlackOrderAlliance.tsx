@@ -9,28 +9,28 @@ const characters = [
   {
     name: "SushiRawks",
     role: "Guild Master",
-    description: "Ancient keeper of forbidden knowledge of ages.",
+    description: "The Heart.",
     power: "BLACK ORDER",
     logo: logoBlackOrder
   },
   {
-    name: "Roara",
+    name: "Raora",
     role: "Guild Master",
-    description: "Brilliant tactician whose strategies have won countless battles.",
+    description: "The Mind.",
     power: "DEFIANCE",
     logo: logoDefiance
   },
   {
     name: "Mq",
     role: "Guild Master",
-    description: "Stalwart defender whose shield has never been broken.",
+    description: "The Blade.",
     power: "FIEND",
     logo: logoFiend
   },
   {
     name: "Sanamluang",
     role: "Guild Master",
-    description: "Silent observer whose insight sees beyond the battlefield.",
+    description: "The Crown.",
     power: "REGENCY",
     logo: logoRegency
   }
@@ -66,7 +66,7 @@ const CharacterSection = () => {
             The Alliance
           </h2>
           <div className="w-24 h-1 bg-gradient-gold mx-auto mb-8"></div>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base text-muted-foreground fantasy-title font-blackorder max-w-3xl mx-auto leading-relaxed">
             Meet the heralds who have shaped our destiny and continue to lead us into battle.
           </p>
         </div>

@@ -20,6 +20,7 @@ All colors MUST be HSL.
 
     /* Guild Gold Primary */
     --primary: 351 64% 45%;
+    --primary-white: #C0C0C0;
     --primary-foreground: 0 0% 8%;
 
     /* Mystical Secondary */
@@ -158,6 +159,7 @@ All colors MUST be HSL.
     letter-spacing: 0.1em;
     text-shadow: 2px 2px 4px hsl(0 0% 0% / 0.7);
   }
+
   .vintage-paper {
   position: relative;
   overflow: hidden;
@@ -462,6 +464,18 @@ All colors MUST be HSL.
   }
   .animate-zoomIn {
     animation: zoomIn 0.4s ease-out forwards;
+  }
+}
+
+@keyframes slowRose {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
   }
 }
 
