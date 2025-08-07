@@ -174,7 +174,7 @@ const RecruitmentSection = () => {
 
                {/* Wax Seal */}
                <a
-                  href="https://discord.gg/CZfxr8qQ"
+                  href="https://discord.gg/db5yWsSSN5"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="wax-seal-link group"
