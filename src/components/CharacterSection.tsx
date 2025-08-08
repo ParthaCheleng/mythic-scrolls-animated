@@ -72,13 +72,21 @@ const CharacterSection = () => {
               <Card className="w-[300px] sm:w-[340px] md:w-[360px] h-[360px] md:h-[380px] bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-500 group-hover:shadow-mystical shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                 <CardContent className="p-6 md:p-8">
                   <div className="text-center mb-5 md:mb-6">
-                    <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-8 md:mb-12 rounded-full bg-gradient-gold p-1">
-                      <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
+                    {/* Crest circle */}
+                    <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-8 md:mb-12 rounded-full bg-gradient-gold p-1 relative">
+                      {/* allow the logo to grow outside the rim */}
+                      <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-visible relative">
                         <img
                           loading="lazy"
                           src={guildEmblem}
                           alt={character.name}
-                          className="w-10 h-10 md:w-12 md:h-12 object-cover rounded-full group-hover:drop-shadow-[0_0_10px_hsl(var(--primary))] transition-all duration-300"
+                          className="
+                            w-10 h-10 md:w-12 md:h-12 object-contain rounded-full
+                            transform-gpu will-change-transform
+                            transition-transform duration-500 ease-[cubic-bezier(.22,.61,.36,1)]
+                            group-hover:scale-[1.2] group-focus-within:scale-[1.2]
+                            group-hover:drop-shadow-[0_0_14px_hsl(var(--primary))]
+                          "
                         />
                       </div>
                     </div>

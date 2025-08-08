@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import heroCharacter from '@/assets/dusa-standoff.png';
-import guildEmblem from '@/assets/BO-BS-LOGO.png';
+import guildEmblem from '@/assets/BO-LP-LOGO-edit.png';
 import smokeOverlay from '@/assets/smoke.jpg';
 import blackOrderTextImage from '@/assets/BO-text.png';
 import smokeOverlayTop from '@/assets/smoke-upside.jpg';

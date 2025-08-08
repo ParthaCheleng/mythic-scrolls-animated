@@ -20,8 +20,8 @@ const CharacterSection = () => {
       (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('visible')),
       { threshold: 0.2 }
     );
-    const elements = sectionRef.current?.querySelectorAll('.scroll-fade-in');
-    elements?.forEach((el) => observer.observe(el));
+    const els = sectionRef.current?.querySelectorAll('.scroll-fade-in');
+    els?.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
@@ -52,15 +52,24 @@ const CharacterSection = () => {
               <Card className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-500 group-hover:shadow-mystical shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                 <CardContent className="p-6 md:p-8">
                   <div className="text-center mb-5 md:mb-6">
-                    <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 md:mb-4 rounded-full bg-gradient-gold p-1">
-                      <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
+                    {/* Crest circle */}
+                    <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 md:mb-4 rounded-full bg-gradient-gold p-1 relative">
+                      {/* overflow-visible lets the icon scale outside the circle */}
+                      <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-visible relative">
                         <img
                           src={character.logo}
                           alt={character.name}
-                          className="w-10 h-10 md:w-12 md:h-12 object-cover rounded-full group-hover:drop-shadow-[0_0_10px_hsl(var(--primary))] transition-all duration-300"
+                          className="
+                            w-10 h-10 md:w-12 md:h-12 object-contain rounded-full
+                            transform-gpu will-change-transform
+                            transition-transform duration-500 ease-[cubic-bezier(.22,.61,.36,1)]
+                            group-hover:scale-[1.2] group-focus-within:scale-[1.2]
+                            group-hover:drop-shadow-[0_0_14px_hsl(var(--primary))]
+                          "
                         />
                       </div>
                     </div>
+
                     <h3 className="fantasy-title text-xl md:text-2xl font-semibold text-primary mb-1 md:mb-2">
                       {character.name}
                     </h3>
@@ -75,7 +84,7 @@ const CharacterSection = () => {
 
                   <div className="text-center">
                     <div className="inline-flex items-center px-3 md:px-4 py-1.5 md:py-2 bg-primary/10 rounded-full border border-primary/20">
-                      <span className="text-primary font-semibold text-xs md:text-sm rounded-full group-hover:drop-shadow-[0_0_10px_hsl(var(--primary))] transition-all duration-300">
+                      <span className="text-primary font-semibold text-xs md:text-sm rounded-full transition-all duration-300">
                         {character.power}
                       </span>
                     </div>
