@@ -1,6 +1,6 @@
 export const members = [
   "Ellione",
-  "Gromash", 
+  "Lestilles", 
   "Elaine",
   "Dominic",
   "Angkasa",
