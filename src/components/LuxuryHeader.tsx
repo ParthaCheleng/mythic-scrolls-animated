@@ -1,5 +1,5 @@
-import roseBackground from "@/assets/rose-adjusted.png";
-import pillarImage from "@/assets/pillar.png";
+// src/components/LuxuryHeader.tsx
+import rosesSweep from "@/assets/rose-sweep.png"; // your rose sweep image
 import guildEmblem from "@/assets/BO-logo.webp";
 import { cn } from "@/lib/utils";
 import { members as rawMembers } from "@/components/data/members";
@@ -38,75 +38,51 @@ const NameCard = ({ name, className, reserved }: NameCardProps) => {
 };
 
 const LuxuryHeader = () => {
-  // 👇 Add up to 4 names that you want to appear in the right-side empty spaces
-  // Replace "Reserved" placeholders with real names when ready.
-  const EXTRA_RIGHT = ["MJAD", "Ekca", "Hellscream", "VonHellmann"];
+  const EXTRA_RIGHT = ["Jaders", "Ekca", "Hellscream", "VonHellmann"];
 
-  // Build list that pads the last row on the RIGHT side
   const cols = 6;
   const remainder = rawMembers.length % cols;
-  const need = remainder === 0 ? 0 : cols - remainder; // 1..5 (we'll cap at 4)
+  const need = remainder === 0 ? 0 : cols - remainder;
   const toAdd = Math.min(need, EXTRA_RIGHT.length);
 
   const members = [...rawMembers];
   const rightPads = EXTRA_RIGHT.slice(0, toAdd);
 
   return (
-    // 👇 Hide entire section below lg
-    <div className="hidden lg:block relative overflow-hidden isolate bg-background">
-      {/* Top/Bottom shadows */}
-      <div className="pointer-events-none absolute top-0 left-0 w-full h-24 md:h-32 bg-gradient-to-b from-black/30 to-transparent z-10" />
-      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-24 md:h-32 bg-gradient-to-t from-black/40 to-transparent z-30" />
+    <div className="hidden lg:block relative overflow-hidden isolate">
+      {/* Base gradient (same as screenshot) */}
+      <div className="absolute inset-0 -z-30 bg-gradient-to-b from-[#111111] via-[#1a1a1a] to-[#111111]" />
 
-      {/* Rose overlays */}
+      {/* Roses sweep overlay */}
       <div
-        className="absolute inset-0 z-10 bg-no-repeat bg-cover opacity-10 mix-blend-screen pointer-events-none"
+        className="absolute inset-0 -z-20 bg-no-repeat bg-cover"
         style={{
-          backgroundImage: `url(${roseBackground})`,
-          backgroundPosition: "top right",
-          backgroundSize: "cover",
-          animation: "slowRose 8s ease-in-out infinite",
-        }}
-      />
-      <div
-        className="absolute inset-0 z-10 bg-no-repeat bg-cover opacity-10 mix-blend-screen pointer-events-none"
-        style={{
-          backgroundImage: `url(${roseBackground})`,
-          backgroundPosition: "bottom left",
-          backgroundSize: "cover",
-          animation: "slowRose 9s ease-in-out infinite reverse",
+          backgroundImage: `url(${rosesSweep})`,
+          backgroundPosition: "center",
+          filter: "saturate(.6) brightness(.6) drop-shadow(0 0 15px rgba(0,0,0,0.9))",
+          opacity: 0.65,
         }}
       />
 
-      {/* Pillars */}
-      <div className="absolute z-30 top-16 left-[-50px] h-[110vh] w-[500px] pointer-events-none">
-        <img
-          src={pillarImage}
-          alt="Left Pillar"
-          className="h-full w-full object-contain opacity-90 drop-shadow-[40px_0px_15px_rgba(0,0,0,0.5)]"
-        />
-      </div>
-      <div className="absolute z-30 top-16 right-[-50px] h-[110vh] w-[500px] pointer-events-none scale-x-[-1]">
-        <img
-          src={pillarImage}
-          alt="Right Pillar"
-          className="h-full w-full object-contain opacity-90 drop-shadow-[60px_0px_15px_rgba(0,0,0,0.5)]"
-        />
-      </div>
+      {/* Softer edge shadows */}
+      <div className="pointer-events-none absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/40 to-transparent z-40" />
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-black/35 to-transparent z-40" />
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-black/35 to-transparent z-40" />
+      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-24 md:h-32 bg-gradient-to-t from-black/40 to-transparent -z-10" />
 
-      {/* Main */}
-      <section className="relative z-20 w-full min-h-screen bg-gradient-shadow text-white px-4 py-12">
+      {/* Content */}
+      <section className="relative z-20 w-full min-h-screen text-white px-4 py-12">
         <div className="text-center mb-10 mt-20">
-          <h1 className="fantasy-title text-5xl font-blackorder text-primary">
+          <h1 className="fantasy-title text-4xl md:text-5xl font-blackorder text-primary mb-4 md:mb-6 text-center">
             Founding members of BLACKORDER
           </h1>
-        <div className="w-24 h-1 bg-gradient-gold mx-auto my-6" />
-          <p className="text-xl text-muted-foreground fantasy-title font-blackorder max-w-3xl mx-auto leading-relaxed">
-            Meet the honored members of BLACKORDER
+          <div className="w-24 h-1 bg-gradient-gold mx-auto my-6" />
+          <p className="text-xl text-muted-foreground fantasy-title font-blackorder max-w-1xl mx-auto leading-relaxed">
+            Meet the honored founding generation of BlackOrder
           </p>
         </div>
 
-        {/* Name grid */}
+        {/* Grid */}
         <div className="max-w-6xl mx-auto px-0">
           <div className="grid gap-5 grid-cols-6">
             {members.map((name, index) => (
@@ -115,18 +91,27 @@ const LuxuryHeader = () => {
               </div>
             ))}
 
-            {/* Right-side fillers to complete last row */}
             {rightPads.map((label, i) => (
               <div key={`pad-${i}`} className="flex justify-center">
-                {/* If you replace "Reserved" with real names above,
-                    set reserved={false} automatically */}
                 <NameCard name={label} reserved={label === "Reserved"} />
               </div>
             ))}
           </div>
         </div>
       </section>
+      {/* Footer tag with icon on right */}
+      <div className="w-full flex items-center justify-center py-4 text-xs text-primary gap-2">
+        <span>
+          Developed by <span className="font-semibold text-primary">SnowCrowzz</span>
+        </span>
+        <img
+          src={guildEmblem}
+          alt="icon"
+          className="w-4 h-4 object-contain"
+        />
+      </div>
     </div>
+    
   );
 };
 
