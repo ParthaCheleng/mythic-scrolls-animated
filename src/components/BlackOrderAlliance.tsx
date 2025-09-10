@@ -2,14 +2,14 @@ import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import logoBlackOrder from '@/assets/BO-logo.png';
 import logoDefiance from '@/assets/Defiance.png';
-import logoRegency from '@/assets/Regency.png';
+import logoMyHero from '@/assets/MyHero.png';
 import logoFiend from '@/assets/Fiend-logo.png';
 
 const characters = [
-  { name: 'SushiRawks', role: 'Guild Master', description: 'The Heart.', power: 'BLACK ORDER', logo: logoBlackOrder },
+  { name: 'SushiRawks', role: 'Guild Master', description: 'The Heart.', power: 'BLACKORDER', logo: logoBlackOrder },
   { name: 'Raora',      role: 'Guild Master', description: 'The Mind.',  power: 'DEFIANCE',     logo: logoDefiance  },
   { name: 'Mq',         role: 'Guild Master', description: 'The Blade.', power: 'FIEND',        logo: logoFiend     },
-  { name: 'Sanamluang', role: 'Guild Master', description: 'The Crown.', power: 'REGENCY',      logo: logoRegency   },
+  { name: 'WinterWolfX', role: 'Guild Master', description: 'The Valiant.', power: 'MYHERO',      logo: logoMyHero   },
 ];
 
 const CharacterSection = () => {
