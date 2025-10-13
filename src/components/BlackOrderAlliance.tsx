@@ -3,12 +3,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import logoBlackOrder from '@/assets/BO-logo.png';
 import logoDefiance from '@/assets/Defiance.png';
 import logoMyHero from '@/assets/MyHero.png';
-import logoFiend from '@/assets/Fiend-logo.png';
+import logoRenaissnace from '@/assets/Renaissance-logo.png';
 
 const characters = [
   { name: 'SushiRawks', role: 'Guild Master', description: 'The Heart.', power: 'BLACKORDER', logo: logoBlackOrder },
   { name: 'Raora',      role: 'Guild Master', description: 'The Mind.',  power: 'DEFIANCE',     logo: logoDefiance  },
-  { name: 'Mq',         role: 'Guild Master', description: 'The Blade.', power: 'FIEND',        logo: logoFiend     },
+  { name: 'Vanissy',    role: 'Guild Master', description: 'The Blade.', power: 'RENAISSANCE',        logo: logoRenaissnace},
   { name: 'WinterWolfX', role: 'Guild Master', description: 'The Valiant.', power: 'MYHERO',      logo: logoMyHero   },
 ];
 
