@@ -84,7 +84,7 @@ const RecruitmentSection = () => {
                 <div className="bg-card/30 p-5 md:p-6 rounded-lg border border-border/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-mystical transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                   <h3 className="text-accent font-semibold mb-2">Requirements</h3>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Active player & 800GS</li>
+                    <li>• Active player & 820GS</li>
                     <li>• Team-oriented mindset</li>
                     <li>• Discord communication</li>
                     <li>• Respect for guild values & community</li>
