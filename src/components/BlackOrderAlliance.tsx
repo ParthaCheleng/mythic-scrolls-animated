@@ -8,7 +8,6 @@ import logoRenaissnace from '@/assets/Renaissance-logo.png';
 const characters = [
   { name: 'SushiRawks', role: 'Guild Master', description: 'The Heart.', power: 'BLACKORDER', logo: logoBlackOrder },
   { name: 'Raora',      role: 'Guild Master', description: 'The Mind.',  power: 'DEFIANCE',     logo: logoDefiance  },
-  { name: 'Vanissy',    role: 'Guild Master', description: 'The Blade.', power: 'RENAISSANCE',        logo: logoRenaissnace},
   { name: 'WinterWolfX', role: 'Guild Master', description: 'The Valiant.', power: 'MYHERO',      logo: logoMyHero   },
 ];
 
@@ -42,7 +41,7 @@ const CharacterSection = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
           {characters.map((character, index) => (
             <div
               key={character.name}
