@@ -8,7 +8,7 @@ import logoRenaissnace from '@/assets/Renaissance-logo.png';
 const characters = [
   { name: 'SushiRawks', role: 'Guild Master', description: 'The Heart.', power: 'BLACKORDER', logo: logoBlackOrder },
   { name: 'Raora',      role: 'Guild Master', description: 'The Mind.',  power: 'DEFIANCE',     logo: logoDefiance  },
-  { name: 'WinterWolfX', role: 'Guild Master', description: 'The Valiant.', power: 'MYHERO',      logo: logoMyHero   },
+  { name: 'KAMENRAIDER', role: 'Guild Master', description: 'The Valiant.', power: 'MYHERO',      logo: logoMyHero   },
 ];
 
 const CharacterSection = () => {
