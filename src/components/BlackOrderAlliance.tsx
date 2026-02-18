@@ -3,12 +3,13 @@ import { Card, CardContent } from '@/components/ui/card';
 import logoBlackOrder from '@/assets/BO-logo.png';
 import logoDefiance from '@/assets/Defiance.png';
 import logoMyHero from '@/assets/MyHero.png';
-import logoRenaissnace from '@/assets/Renaissance-logo.png';
+import logoOriginal from '@/assets/ori_logo.png';
 
 const characters = [
   { name: 'SushiRawks', role: 'Guild Master', description: 'The Heart.', power: 'BLACKORDER', logo: logoBlackOrder },
-  { name: 'Raora',      role: 'Guild Master', description: 'The Mind.',  power: 'DEFIANCE',     logo: logoDefiance  },
-  { name: 'KAMENRAIDER', role: 'Guild Master', description: 'The Valiant.', power: 'MYHERO',      logo: logoMyHero   },
+  { name: 'Raora', role: 'Guild Master', description: 'The Mind.', power: 'DEFIANCE', logo: logoDefiance },
+  { name: 'KAMENRAIDER', role: 'Guild Master', description: 'The Vanguard.', power: 'MYHERO', logo: logoMyHero },
+  { name: 'Karashi', role: 'Guild Master', description: 'The Valiant.', power: 'ORIGINAL', logo: logoOriginal },
 ];
 
 const CharacterSection = () => {
@@ -16,11 +17,16 @@ const CharacterSection = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('visible')),
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) e.target.classList.add('visible');
+        }),
       { threshold: 0.2 }
     );
+
     const els = sectionRef.current?.querySelectorAll('.scroll-fade-in');
     els?.forEach((el) => observer.observe(el));
+
     return () => observer.disconnect();
   }, []);
 
@@ -34,14 +40,23 @@ const CharacterSection = () => {
           <h2 className="fantasy-title text-4xl md:text-5xl font-blackorder text-primary mb-4 md:mb-6">
             The Alliance
           </h2>
+
           <div className="w-20 md:w-24 h-1 bg-gradient-gold mx-auto mb-6 md:mb-8" />
+
           <p className="text-sm md:text-base text-muted-foreground fantasy-title font-blackorder max-w-2xl md:max-w-3xl mx-auto leading-relaxed">
             Meet the heralds who have shaped our destiny and continue to lead us into battle.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
+        <div className="
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-4
+          gap-6 md:gap-8
+          mb-12 md:mb-16
+        ">
           {characters.map((character, index) => (
             <div
               key={character.name}
@@ -53,7 +68,6 @@ const CharacterSection = () => {
                   <div className="text-center mb-5 md:mb-6">
                     {/* Crest circle */}
                     <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 md:mb-4 rounded-full bg-gradient-gold p-1 relative">
-                      {/* overflow-visible lets the icon scale outside the circle */}
                       <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-visible relative">
                         <img
                           src={character.logo}
@@ -62,7 +76,8 @@ const CharacterSection = () => {
                             w-10 h-10 md:w-12 md:h-12 object-contain rounded-full
                             transform-gpu will-change-transform
                             transition-transform duration-500 ease-[cubic-bezier(.22,.61,.36,1)]
-                            group-hover:scale-[1.2] group-focus-within:scale-[1.2]
+                            group-hover:scale-[1.2]
+                            group-focus-within:scale-[1.2]
                             group-hover:drop-shadow-[0_0_14px_hsl(var(--primary))]
                           "
                         />
@@ -72,6 +87,7 @@ const CharacterSection = () => {
                     <h3 className="fantasy-title text-xl md:text-2xl font-semibold text-primary mb-1 md:mb-2">
                       {character.name}
                     </h3>
+
                     <div className="text-accent font-semibold text-sm md:text-base mb-3 md:mb-4">
                       {character.role}
                     </div>
@@ -97,7 +113,13 @@ const CharacterSection = () => {
         {/* Video CTA */}
         <div className="text-center scroll-fade-in transform transition-transform duration-500 hover:scale-[1.03]">
           <div className="bg-card/30 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-border/50 max-w-3xl md:max-w-4xl mx-auto shadow-[0_0_30px_rgba(0,0,0,0.9)] hover:border-primary/50 hover:shadow-mystical transition-all duration-300">
-            <video className="w-full rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.7)]" autoPlay loop muted playsInline>
+            <video
+              className="w-full rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.7)]"
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
               <source src="/Intro.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
